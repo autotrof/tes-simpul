@@ -1,0 +1,16 @@
+version: '3.9'
+
+services:
+ app:
+  container_name: simpul
+  build: 
+   dockerfile: Dockerfile
+  ports:
+   - 3000:3000
+  stdin_open: true
+  tty: true
+
+networks:
+ default:
+  name: global
+  external: true
