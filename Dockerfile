@@ -1,6 +1,6 @@
 FROM ruby:3.2.1-alpine
 
-RUN apk add --update build-base sqlite-dev nodejs tzdata
+RUN apk add build-base sqlite-dev nodejs npm tzdata
 
 RUN gem install bundler
 
@@ -15,4 +15,5 @@ EXPOSE 3000
 
 RUN npm install
 RUN /app/bin/vite build
+RUN rails db:migrate
 CMD rm -f tmp/pids/server.pid & rails s -b '0.0.0.0'

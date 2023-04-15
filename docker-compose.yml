@@ -1,14 +1,14 @@
 version: '3.9'
 
 services:
- app:
-  container_name: simpul
-  build: 
+ chat-app:
+  container_name: tes-simpul
+  build:
+   context: .
    dockerfile: Dockerfile
+  image: railschat
   ports:
-   - 3000:3000
-  stdin_open: true
-  tty: true
+   - "3000:3000"
 
 networks:
  default:
