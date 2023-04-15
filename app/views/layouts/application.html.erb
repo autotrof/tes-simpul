@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Chat</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+  </head>
+
+  <body>
+    <div class="green-background"></div>
+    <div class="wrap" id="app"></div>
+
+    <script>
+      window.user = <%= @user.to_json.html_safe %>
+    </script>
+    <%= vite_client_tag %>
+    <%= vite_javascript_tag 'application' %>
+  </body>
+</html>
